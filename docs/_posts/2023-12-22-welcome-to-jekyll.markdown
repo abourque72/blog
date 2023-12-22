@@ -6,7 +6,7 @@ categories: jekyll update
 permalink: /2023-12-22.html
 ---
 
-Introduction to my life and what I'll be talking about!
+Hi! This is going to be rather lengthy, but I don't expect most of my posts to be this long.
 
 {::comment}
 Jekyll requires blog post files to be named according to the following format:
@@ -26,8 +26,6 @@ print_hi('Tom')
 {% endhighlight %}
 
 {:/comment}
-
-Hi! This is going to be rather lengthy, but I don't expect most of my posts to be this long.
 
 ## Boring academic life story
 
