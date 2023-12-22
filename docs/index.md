@@ -1,9 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
+defaults
+title: Home
 layout: default
 permalink: /
 ---
 
-Home stuff
+Welcome to my blog!
+
+It was started on 2023 December 22, so it is probably empty if you are looking at it now. Hopefully that changes!
+
+Up in the top right, you can click on the "Blog" tag to see my posts, or see below.
+
+This blog was made with jekyll (default Minima theme) on github pages. See also [my personal website](https://abourque72.github.io){:target="_blank"}{:rel="noopener noreferrer"} (opens in new tab), which is a bit more home-made. 
