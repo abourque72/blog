@@ -6,6 +6,8 @@ categories: jekyll update
 permalink: /2023-12-22.html
 ---
 
+Introduction to my life and what I'll be talking about!
+
 {::comment}
 Jekyll requires blog post files to be named according to the following format:
 
@@ -56,11 +58,13 @@ As of this post, I am on winter break. My courses in the previous semester were:
 - Algebraic topology (relatively basic; chapters 3 and 4 in Hatcher)
 - VIR on cluster algebras (going through the first 5-or-so chapters of the in-develolpment textbook by Fomin, Williams, and Zelevinsky)
 - A reading course on perverse sheaves (using the book written by my advisor Pramod Achar, "Perverse Sheaves and Applications to Representation Theory") (I got through the first 4 chapters, and I am skipping chapter 5)
+
 Here's what I'll be taking next semester:
 - Modular forms
 - Functional analysis
 - Reading course on perverse sheaves, especially the "applications to representation theory" part
 - Reading course on intersection theory and enumerative geometry (with hopes of learning just enough to be powerful)
+
 During my winter break, I've been doing the following things (which I will expand upon in future posts):
 - Continue reading "Perverse Sheaves..." (I'm about half-way through chapter 6)
 - Prepare for another reading course next semester, on intersection theory and enumerative geometry (preparation consists of reading Fulton's "Introduction to Intersection Theory in Algebraic Geometry")
