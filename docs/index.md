@@ -1,5 +1,4 @@
 ---
-defaults
 title: Home
 layout: default
 permalink: /
