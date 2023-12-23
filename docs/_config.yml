@@ -27,6 +27,14 @@ github_username:  abourque72
 theme: minima
 plugins:
   - jekyll-feed
+#  - jekyll-katex
+
+kramdown:
+  math_engine: katex
+
+
+#kramdown:
+# math_engine: katex
 
 # Exclude from processing.
 # The following items will not be processed, by default.
