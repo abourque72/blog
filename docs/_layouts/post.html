@@ -1,61 +1,49 @@
 ---
 layout: default
 ---
-<!--
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
--->
+
+{% if page.katex %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-<!--
-<script>
-    function loadMacros() {
-        var macros = {};
-        katex.renderToString(`
-        \\newcommand{\\R}[0]{\\mathbb R}
-        \\newcommand{\\C}[0]{\\mathbb C}
-        \\newcommand{\\Z}[0]{\\mathbb{Z}}
-        \\newcommand{\\Gr}[0]{\\mathcal Gr}
-        \\newcommand{\\bGr}[0]{\\mathbf{Gr}}
-        \\newcommand{\\Fl}[0]{\\mathcal Fl}
-        \\newcommand{\\lam}[0]{\\lambda}
-        \\newcommand{\\mbf}[1]{\\mathbf{#1}}
-        \\newcommand{\\mf}[1]{\\mathfrak{#1}}
-        \\newcommand{\\bb}[1]{\\mathbb{#1}}
-        \\newcommand{\\mc}[1]{\\mathcal{#1}}
-        \\newcommand{\\ol}[1]{\\overline{#1}}
-        \\newcommand{\\ul}[1]{\\underline{#1}}
-        `, {macros, globalGroup: true});
-        renderMathInElement(document.body, {macros});
-    }
-</script>
--->
-<!-- To automatically render math in text elements, include the auto-render extension: -->
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var macros = {};
-        katex.renderToString(`
-        \\newcommand{\\R}[0]{\\mathbb R}
-        \\newcommand{\\C}[0]{\\mathbb C}
-        \\newcommand{\\Z}[0]{\\mathbb{Z}}
-        \\newcommand{\\Gr}[0]{\\mathcal Gr}
-        \\newcommand{\\bGr}[0]{\\mathbf{Gr}}
-        \\newcommand{\\Fl}[0]{\\mathcal Fl}
-        \\newcommand{\\lam}[0]{\\lambda}
-        \\newcommand{\\mbf}[1]{\\mathbf{#1}}
-        \\newcommand{\\mf}[1]{\\mathfrak{#1}}
-        \\newcommand{\\bb}[1]{\\mathbb{#1}}
-        \\newcommand{\\mc}[1]{\\mathcal{#1}}
-        \\newcommand{\\ol}[1]{\\overline{#1}}
-        \\newcommand{\\ul}[1]{\\underline{#1}}
-        `, {macros, globalGroup: true});
-        renderMathInElement(document.body, {macros});
+        var custommacros = {
+            "\\Gr": "\\mathcal Gr",
+            "\\O": "\\mathbb O",
+            "\\R": "\\mathbb R",
+            "\\C": "\\mathbb C",
+            "\\Z": "\\mathbb Z",
+            "\\K": "\\mathbb K",
+            "\\L": "\\mathbf L",
+            "\\bGr": "\\mathbf{Gr}",
+            "\\Fl": "\\mathcal Fl",
+            "\\lam": "\\lambda",
+            "\\mbf": "\\mathbf",
+            "\\mf": "\\mathfrak",
+            "\\bb": "\\mathbb",
+            "\\mc": "\\mathcal",
+            "\\ol": "\\overline",
+            "\\ul": "\\underline"
+        };
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            macros: custommacros
+        });
     });
 </script>
-
+{% endif %}
 
 <h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+<p>{{ page.date | date_to_string }}</p>
 
 {{ content }}

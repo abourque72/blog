@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  "Post 2: Research"
-date:   2022-12-22 09:31:22 -0600
+title:  "Post 2: Current Research"
+date:   2022-12-23 09:31:22 -0600
 categories: jekyll update
-permalink: /2023-12-22-2.html
+permalink: /2023-12-23.html
+katex: true
 ---
 
 In this post I'll talk about my current research project.
 
-I work with [Pramod Achar](https://www.math.lsu.edu/~pramod/){:target="_blank"}{:rel="noopener noreferrer"} (opens in new tab). Our goal is to give explicit models for so-called "global Schubert varieties" for $$GL_n$$. Let me first give intuition for these words (I will try to write so that an undergraduate that has taken classes in group theory and topology can get some ideas), and then I'll talk specifics.
+I work with [Pramod Achar](https://www.math.lsu.edu/~pramod/){:target="_blank"}{:rel="noopener noreferrer"} (opens in new tab). Our goal is to give explicit models for so-called "global Schubert varieties" for $GL_n$. Let me first give intuition for these words (I will try to write so that an undergraduate that has taken classes in group theory and topology can get some ideas), and then I'll talk specifics.
 
 # Intuition
 
@@ -48,19 +49,46 @@ To reiterate, the goal of our project is to determine the conditions on a lattic
 
 # Formal stuff
 
-Now we go back through all of the previous talk with some actual math. While I tried to make the previous section undergrad-friendly, I make no attempt to do so in this section. In particular, I will use some buzz words that may mean nothing to an undergrad student. However, if one ignores the fancy lingo and follows the math, it actually isn't too bad. One still only needs first courses in algebra and topology (I think). So, if you are reading this as an undergrad - try your best!
+Now we go back through all of the previous talk with some actual math. While I tried to make the previous section undergrad-friendly, I make no attempt to do so in this section. In particular, I will use some buzz words that may mean nothing to an undergrad student, especially one that hasn't done much representation theory. However, if one ignores the fancy lingo and follows the math, it actually isn't too bad. One still only needs first courses in algebra and topology (I think). So, if you are reading this as an undergrad - try your best!
 
 ## Lattices and affine Grassmannians
 
-We will make extensive use of the power series ring \\(\mathbb O = \mathbb C[[t]]\\) and its fraction field, the Laurent series \\(\mathbb K = \mathbb C((t))\\). Also, fix positive integer \\(n\\) (for our \\(GL_n\\) in consideration).
+We will use the power series ring \\(\mathbb O = \mathbb C[[t]]\\) and its fraction field, the Laurent series \\(\mathbb K = \mathbb C((t))\\). Also, fix positive integer \\(n\\) (for our \\(GL_n\\) in consideration).
 
 A *lattice* is a free rank \\(n\\) \\(\mathbb O\\)-submodule of \\(\mathbb K^n\\). In particular, a lattice can be given by a \\(\mathbb K\\)-basis for \\(\mathbb K^n\\); it is the \\(\mathbb O\\)-span of that basis. The *standard lattice* is \\(\mathbb O^n\\), which corresponds to the standard basis \\(e_1,\dots,e_n\\).
 
 The *affine Grassmannian* of an algebraic group \\(G\\) is the quotient \\(G(\mathbb K)/G(\mathbb O)\\). In the case \\(G=GL_n\\), this can be identified with the set of lattices. The reason for this is the orbit-stabilizer theorem: the group \\(GL_n(\mathbb K)\\) acts transitively on the set of lattices, and the stabilizer of any particular lattice is isomorphic to \\(GL_n(\mathbb O)\\). In fact, the stabilizer of \\(\mathbb O^n\\) is *exactly* \\(GL_n(\mathbb O)\\).
 
-By construction, there is a natural action of \\(G(\mathbb O)\\) on \\(\mathcal Gr\\). The (spherical) (I will not use the word spherical anymore) Schubert cells are labeled by dominant coweights of \\(G\\). Thankfully, for \\(GL_n\\), dominant coweight has a simple meaning: it is a non-increasing sequence of \\(n\\) integers, written as \\(\lambda=(\lambda_1\geq\dots\geq\lambda_n)\\).
+By construction, there is a natural action of \\(G(\mathbb O)\\) on \\(\mathcal Gr\\). The (spherical) (I will not use the word spherical anymore) *Schubert cells* \\(\Gr_\lambda\\) are the $$G(\O)$$-orbits, and they are labeled by dominant coweights $$\lambda$$ of \\(G\\). I won't explain what (dominant) coweights are in general, nor do you need to know what they are. For \\(GL_n\\), dominant coweight has a simple meaning (at least, up to an identification): it is a non-increasing sequence of \\(n\\) integers, written as \\(\lambda=(\lambda_1\geq\dots\geq\lambda_n)\\).
 
-What is \\(\mathcal Gr_\lambda\\) the orbit of?
+For each dominant coweight $\lam$, there is a convenient representative for $\Gr_\lam$. Let $\L^\lam$ be the lattice corresponding to the basis $t^{\lam_1}e_1,\dots,t^{\lam_n}e_n$. Then $\Gr_\lam$ is the $GL_n(\O)$-orbit of $\L^\lam$.
 
-Let \\(\mathbf L^\lambda\\) be the lattice corresponding to the basis \\(t^{\lambda_1}e_1,\dots,t^{\lambda_n}e_n\\). Then \\(\mathcal Gr_\lambda\\) is the \\(GL_n(\mathbb O)\\) orbit of \\(\mathbf L^\lambda\\).
+This definition is not hard to state, but at first glance it doesn't tell you much. If I give you a lattice $\L$, how can you tell if it is in $\Gr_\lam$ for some dominant coweight $\lam$? Luckily, there is a very nice description:
 
+$$\Gr_\lam=\left\{ \L\in\Gr\mid t^{\lam_1}\O^n\subset \L \subset t^{\lam_n}\O^n \text{ and } \dim\frac{\L\cap t^i\O^n}{t^{\lam_1}\O^n}=\sum_{j=i}^{\lam_1-1}|\{ k\mid \lam_k\leq j \}|\right\}.$$
+
+The second condition must hold for all integers $i$ satisfying $\lam_n\leq i\leq \lam_1$.
+
+We also care about the *Schubert variety* associated to $\lam$, $\ol{\Gr_\lam}$. Once again, there is a nice description of this space:
+
+$$\ol{\Gr_\lam}=\left\{ \L\in\Gr\mid t^{\lam_1}\O^n\subset \L \subset t^{\lam_n}\O^n \text{ and } \dim\frac{\L\cap t^i\O^n}{t^{\lam_1}\O^n}\ge\sum_{j=i}^{\lam_1-1}|\{ k\mid \lam_k\leq j \}|\right\}.$$
+
+The second condition must hold for all integers $i$ satisfying $\lam_n\leq i\leq \lam_1$.
+
+## Lattice chains and affine flag varieties
+
+The assignment $t\mapsto 0$ induces a ring homomorphism $\O\to \C$, and that induces a map $\pi:G(\O)\to G(\C)$. Pick a Borel subgroup $B$ of $G$, and let $I=\pi^{-1}(B(\C)$. $I$ is called an Iwahori subgroup. The *affine flag variety* $\Fl$ of $G$ is then $G(\K)/I$.
+
+If you don't know what a Borel subgroup is, that's fine. For $G=GL_n$, we pick $B$ to be the subgroup consisting of lower triangular matrices. That is, for each ring $R$, $B(R)$ is the group of invertible lower triangular matrices with entries in $R$. Correspondingly, $I$ will consist of elements in $GL_n(\O)$ that are "lower triangular mod $t$".
+
+Furthermore, we can identify $\Fl$ with the set of lattice chains. A *lattice chain* $\ul\L$ is a nested sequence of $n$ lattices $L_1\supset L_2\supset\cdots \supset L_n$, with the further conditions that $L_n\supset tL_1$ and $\dim(L_i/L_{i+1})=1$ for $i= 1,\dots,n-1$. It also follows that $\dim(L_n/tL_1)=1$. The reasoning for the identification is the same as that with identifying $\Gr$ with the set of lattices. In particular, $I$ is the stabilizer of the *standard lattice chain*:
+
+$$\O^n\supset t\O\oplus \O^{n-1}\supset\cdots\supset t\O^{n-1}\oplus\O.$$
+
+## The end and global affine Grassmannian
+
+Now, correctly defining the global affine Grassmannian $\bGr$ is beyond my own capability. You can find the original construction in Dennis Gatisgory's paper ["Construction of central elements in the affine Hecke algebra via nearby cycles"](https://arxiv.org/abs/math/9912074) (opens in new tab), or you can find a more expository (but still difficult) treatment in the in-progress book of Pramod Achar and Simon Riche, ["Central Sheaves on Affine Flag Varieties"](https://lmbp.uca.fr/~riche/central.pdf){:target="_blank"}{:rel="noopener noreferrer"} (opens in new tab and downloads pdf).
+
+In any case, I will say that the core idea of $\bGr$ is that which I described in the previous section. Namely, it has a map to $\C$, such that over any non-zero complex number it looks like $\Gr$, and over $0$ it looks like $\Fl$.
+
+Since our explicit model of $\bGr$ is in-progress, I am going to end the discussion here (just in case our ideas are wrong, again). However, I will definitely continue this post when we have checked our work!
