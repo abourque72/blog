@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Post 2: Current Research"
-date:   2022-12-23 09:31:22 -0600
-categories: jekyll update
+date: 2022-12-23
+title: "Post 2: Current Research"
 permalink: /2023-12-23.html
 katex: true
+order: 2
 ---
 
 In this post I'll talk about my current research project.
