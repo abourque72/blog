@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2022-12-23
+date: 2023-12-23
 title: "Post 2: Current Research"
 permalink: /post2.html
 katex: true
