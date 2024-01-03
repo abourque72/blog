@@ -13,6 +13,8 @@ I work with [Pramod Achar](https://www.math.lsu.edu/~pramod/){:target="_blank"}{
 
 [^1]: I will try to write so that an undergraduate that has taken classes in group theory and topology can get some ideas.
 
+---
+
 # Intuition
 
 ## Algebraic groups
@@ -61,6 +63,8 @@ To reiterate, the goal of our project is to determine the conditions on a lattic
 
 [^6]: Assuming that the lattice family model for $\bGr$ is correct.
 
+---
+
 # Formal stuff
 
 Now we go back through all of the previous talk with some actual math. While I tried to make the previous section undergrad-friendly, I make no attempt to do so in this section. In particular, I will use some buzz words that may mean nothing to an undergrad student, especially one that hasn't done much representation theory. However, if one ignores the fancy lingo and follows the math, it actually isn't too bad. One still only needs first courses in algebra and topology (I think). So, if you are reading this as an undergrad - try your best!
@@ -108,5 +112,7 @@ Now, correctly defining the global affine Grassmannian $\bGr$ is beyond my own c
 In any case, I will say that the core idea of $\bGr$ is that which I described in the previous section. Namely, it has a map to $\C$, such that over any non-zero complex number it looks like $\Gr$, and over $0$ it looks like $\Fl$.
 
 Since our explicit model of $\bGr$ is in-progress, I am going to end the discussion here. However, I will definitely continue this post when we have checked our work!
+
+---
 
 Footnotes:
