@@ -17,4 +17,4 @@ I mistakenly said that the bounded variants of $Ch(\mc A)$ and $K(\mc A)$ are de
 
 - $Ch^-(\mc A)$ and $K^-(\mc A)$ consist of complexes $A^\bullet$ for which there is an integer $N$ such that $A^i=0$ for $i \> N$.
 
-- $Ch^b(\mc A)$ and $K^b(\mc A)$ consists of complexes $A^\bullet$ for which there is a positive integer $N$ such that $A^i=0$ for $|i| \> N$.
+- $Ch^b(\mc A)$ and $K^b(\mc A)$ consists of complexes $A^\bullet$ for which there is a positive integer $N$ such that $A^i=0$ for $\|i\| \> N$.
