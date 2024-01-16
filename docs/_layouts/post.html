@@ -63,8 +63,6 @@ layout: default
 
 {% if page.xyz %}
 
-<hr>
-
 <?php
 
     // commentsubmit.php -- Receive comments and e-mail them to someone
@@ -137,6 +135,12 @@ layout: default
 
 ?>
 
+{% endif %}
+
+{% if page.wxyz %}
+
+<hr>
+
 <div id="comments">
     <h1>Comments</h1>
     {% for c in page.comments %}
@@ -156,7 +160,7 @@ layout: default
     <p style="font-style: italic">
         All comments are held for moderation; basic HTML and LaTeX formatting are accepted.
     </p>
-    <form id="commentform" method="post">
+    <form id="commentform">
         <input type="hidden" name="post_id" value="{{page.order}}" />
         <input type="hidden" name="return_url" value="{{site.url}}/{{page.url}}" />
         <table>
@@ -168,10 +172,35 @@ layout: default
                 <td colspan="2"><textarea name="comment" rows="10" cols="60" ></textarea></td>
             </tr>
             <tr>
-                <td><input type="submit" name="submit" value="Submit Comment" /></td>
+                <td><button onclick="runPhpScript()">Submit</button></td>
             </tr>
         </table>
     </form>
 </div>
+
+<script>
+    function runPhpScript() {
+        // Get textbox values
+        var comform = document.getElementById("commentform");
+        var compostid = comform.elements["post_id"].value;
+        var comreturnurl = comform.elements["return_url"].value;
+        var comname = comform.elements["name"].value;
+        var comtext = comform.elements["comment"].value;
+
+        // Construct URL with parameters
+        var url = "{{site.url}}/commentsubmitcopy.php";
+        url += "?compostid=" + encodeURIComponent(compostid);
+        url += "&comreturnurl=" + encodeURIComponent(comreturnurl);
+        url += "&comname=" + encodeURIComponent(comname);
+        url += "&comtext=" + encodeURIComponent(comtext);
+
+        // Create a new script element to trigger GET request
+        var script = document.createElement("script");
+        script.src = url;
+
+        // Append the script element to the body
+        document.body.appendChild(script);
+    }
+</script>
 
 {% endif %}
