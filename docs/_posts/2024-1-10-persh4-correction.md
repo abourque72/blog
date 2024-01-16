@@ -5,7 +5,6 @@ title: "Post 11: Correction to Perverse Sheaves Part 4"
 permalink: /post11.html
 katex: true
 order: 11
-wxyz: true
 ---
 
 You don't need to read this post if you read Part 4 after January 10 2024.
