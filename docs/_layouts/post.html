@@ -194,12 +194,7 @@ layout: default
         url += "&comname=" + encodeURIComponent(comname);
         url += "&comtext=" + encodeURIComponent(comtext);
 
-        // Create a new script element to trigger GET request
-        var script = document.createElement("script");
-        script.src = url;
-
-        // Append the script element to the body
-        document.body.appendChild(script);
+        location.href = url;
     }
 </script>
 
