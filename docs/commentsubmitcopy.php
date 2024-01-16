@@ -42,10 +42,7 @@ $COMMENT_RECEIVED = "comment_received.html";
  * HERE BE CODE
  ****************************************************************************/
 
-$post_id = $_GET["compostid"];
-unset($_GET["compostid"]);
-$msg = "post_id: $post_id\n";
-$msg .= "date: " . date($DATE_FORMAT) . "\n";
+$msg = "date: " . date($DATE_FORMAT) . "\n";
 
 foreach ($_GET as $key => $value) {
 	if (strstr($value, "\n") != "") {

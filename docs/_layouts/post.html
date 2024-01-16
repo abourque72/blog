@@ -158,34 +158,31 @@ layout: default
     <hr>
     <h1>Post a comment</h1>
     <p style="font-style: italic">
-        All comments are held for moderation; basic HTML and LaTeX formatting are accepted.
+        All comments are held for moderation. Basic LaTeX formatting is accepted.
     </p>
-    <form id="commentform">
-        <input type="hidden" name="post_id" value="{{page.order}}" />
-        <input type="hidden" name="return_url" value="{{site.url}}/{{page.url}}" />
-        <table>
-            <tr>
-                <th>Name:</th>
-                <td><input type="text" size="25" name="name" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><textarea name="comment" rows="10" cols="60" ></textarea></td>
-            </tr>
-            <tr>
-                <td><button onclick="runPhpScript()">Submit</button></td>
-            </tr>
-        </table>
-    </form>
+    <input type="hidden" id="post_id" value="{{page.order}}" />
+    <input type="hidden" id="return_url" value="{{site.url}}/{{page.url}}" />
+    <table>
+        <tr>
+            <th>Name:</th>
+            <td><input type="text" size="25" id="commentername" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><textarea id="commentmsg" rows="10" cols="60" ></textarea></td>
+        </tr>
+        <tr>
+            <td><button onclick="runPhpScript()">Submit</button></td>
+        </tr>
+    </table>
 </div>
 
 <script>
     function runPhpScript() {
         // Get textbox values
-        var comform = document.getElementById("commentform");
-        var compostid = comform.elements["post_id"].value;
-        var comreturnurl = comform.elements["return_url"].value;
-        var comname = comform.elements["name"].value;
-        var comtext = comform.elements["comment"].value;
+        var compostid = document.getElementById("post_id").value;
+        var comreturnurl = document.getElementById("return_url").value;
+        var comname = document.getElementById("commentername").value;
+        var comtext = document.getElementById("commentmsg").value;
 
         // Construct URL with parameters
         var url = "{{site.url}}/commentsubmitcopy.php";
