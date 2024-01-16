@@ -82,7 +82,7 @@ layout: default
     <p style="font-style: italic">
         All comments are held for moderation; basic HTML and LaTeX formatting are accepted.
     </p>
-    <form id="commentform" method="POST" action="{{site.url}}/commentsubmit.php">
+    <form id="commentform" method="post" action="{{site.url}}/commentsubmit.php">
         <input type="hidden" name="post_id" value="{{page.order}}" />
         <input type="hidden" name="return_url" value="{{site.url}}/{{page.url}}" />
         <table>
