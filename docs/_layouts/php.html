@@ -18,18 +18,48 @@
 
 		$msg = "date: " . date($DATE_FORMAT) . "\n";
 
-		foreach ($_GET as $key => $value) {
-			if (strstr($value, "\n") != "") {
-				$value = str_replace("\n", "\n  ", $value);
-			}
-			$value = "'" . str_replace("'", "''", $value) . "'";
-			$msg .= "$key: $value\n";
+		// keys: post_id, comreturnurl, name, comment
+
+		$key = "post_id";
+		$value = $_GET[$key];
+
+		if (strstr($value, "\n") != "") {
+			$value = str_replace("\n", "\n  ", $value);
 		}
+		$value = "'" . str_replace("'", "''", $value) . "'";
+		$msg .= "$key: $value\n";
+
+		$key = "comreturnurl";
+		$value = $_GET[$key];
+
+		if (strstr($value, "\n") != "") {
+			$value = str_replace("\n", "\n  ", $value);
+		}
+		$value = "'" . str_replace("'", "''", $value) . "'";
+		$msg .= "$key: $value\n";
+
+		$key = "name";
+		$value = $_GET[$key];
+
+		if (strstr($value, "\n") != "") {
+			$value = str_replace("\n", "\n  ", $value);
+		}
+		$value = "'" . str_replace("'", "''", $value) . "'";
+		$msg .= "$key: $value\n";
+
+		$key = "comment";
+		$value = $_GET[$key];
+
+		if (strstr($value, "\n") != "") {
+			$value = str_replace("\n", "\n  ", $value);
+		}
+		$value = "'" . str_replace("'", "''", $value) . "'";
+		$msg .= "$key: $value\n";
 
 		if (mail($EMAIL_ADDRESS, $SUBJECT, $msg))
 		{
 			echo '<h1>Comment Received!</h1>';
-			echo '<p>Thank you for your comment. It will be reviewed and published shortly.</p>'
+			echo '<p>Thank you for your comment. It will be reviewed and published shortly.</p>';
 			$return_url = $_GET['comreturnurl'];
 			$return_delay = 5; //Number of seconds 
 			echo "<meta http-equiv=\"refresh\" content=\"$return_delay;url='$return_url'\" />";
@@ -38,7 +68,7 @@
 		}
 		else
 		{
-			echo '<h1>Error!</h1>'
+			echo '<h1>Error!</h1>';
 			echo '<p>There was a problem sending the comment. Please contact the site's owner.</p>';
 		}
 
