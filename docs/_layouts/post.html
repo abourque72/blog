@@ -185,11 +185,11 @@ layout: default
         var comtext = document.getElementById("commentmsg").value;
 
         // Construct URL with parameters
-        var url = "{{site.url}}/commentsubmitcopy.php";
-        url += "?compostid=" + encodeURIComponent(compostid);
+        var url = "{{site.url}}/process_comment.html";
+        url += "?post_id=" + encodeURIComponent(compostid);
         url += "&comreturnurl=" + encodeURIComponent(comreturnurl);
-        url += "&comname=" + encodeURIComponent(comname);
-        url += "&comtext=" + encodeURIComponent(comtext);
+        url += "&name=" + encodeURIComponent(comname);
+        url += "&comment=" + encodeURIComponent(comtext);
 
         location.href = url;
     }
