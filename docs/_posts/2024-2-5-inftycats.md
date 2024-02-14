@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2024-2-5
+date: 2024-2-14
 title: "Post 16: Overview of Infinity Categories"
 permalink: /post16.html
 katex: true
