@@ -17,11 +17,17 @@ I work with [Pramod Achar](https://www.math.lsu.edu/~pramod/){:target="_blank"}{
 
 # Intuition
 
-## Algebraic groups
+## Algebraic groups[^alggrp]
 
-I was originally going to put this in the "formal" section, but truth be told I don't feel like explaining it formally. I also think it would be good for some undergrad readers to get intuition about this. The most familiar and motivating example of an algebraic group is \\(GL_n\\). You might be used to seeing notation like \\(GL_n(\R)\\) or \\(GL_n(\mathbb C)\\), which tells you what the entries of the matrices are allowed to be. The algebraic group \\(GL_n\\) takes this a step back and essentially packages all of the groups \\(GL_n(R)\\) for rings[^2] into one object. The idea you should have is that, for any ring \\(R\\), an algebraic group \\(G\\) has a corresponding group \\(G(R)\\). There is extra compatibility[^3] and niceness[^4] that one often imposes, but \\(GL_n\\) has these properties, and we won't be mentioning them explicitly. In fact, I've essentially described a more general notion, known as a group scheme. In any case, the details aren't important for what's to come.
+[^alggrp]: I was originally going to put this in the "formal" section, but truth be told I don't feel like explaining it formally. I also think it would be good for some undergrad readers to get intuition about this.
 
-[^2]: Really, algebras over a field.
+Underlying almost all of geometric representation theory are objects called "algebraic groups". One should note that these are not just the same as groups as you may have seen in an abstract algebra course. Rather, depending on your perspective, they are either a family of groups, or a certain kind of geometric object with a group structure. If you have seen Lie groups before, they are closely related.
+
+The most familiar and motivating example of an algebraic group is \\(GL_n\\). You may have seen the group $GL_n(\R)$ before; it is the group of $n$ by $n$ invertible matrices with entries in $\R$. You may have also seen that you can consider $GL_n(\C)$ as well. In fact, for any (commutative and unital) ring $R$, there is a corresponding group $GL_n(R)$. We can then consider $GL_n$ to be a single object that takes rings $R$ and gives us groups $GL_n(R)$.
+
+We have arrived at the core idea of algebraic groups: for any ring \\(R\\), an algebraic group \\(G\\) has a corresponding group \\(G(R)\\). There is extra compatibility[^3] and niceness[^4] that one often imposes, but \\(GL_n\\) has these properties, and I won't be mentioning them explicitly. In fact, I've essentially described a more general notion, known as a group scheme. In any case, the details aren't important for what's to come.
+
+[^2]: I will take rings to be commutative and unital.
 
 [^3]: Namely, an algebraic group is a functor and a scheme.
 
@@ -33,17 +39,21 @@ What is an "explicit model"? To put it simply, the objects we are studying are d
 
 ## Global Schubert varieties
 
-What is a "global Schubert variety"? Well, before I get into specifics, I will talk about the steps involved to define it.
+What is a "global Schubert variety"? Well, there is a lot of background required to even answer that question, even vaguely. So, I will throw out some words and how they relate to each other, so that you have an idea of what I need to define. All of these words can be defined for a sufficiently nice algebraic group, but since I will be fixing $G=GL_n$, I will use articles like "the" instead of "a".
 
-Global Schubert varieties live inside of the global affine Grassmannian. The global affine Grassmannian is made out of copies of the affine Grassmannian and a copy of the affine flag variety. We will also need to discuss the Schubert cells and varieties[^5], which live in the affine Grassmannian. Remember, everything we will do is for \\( GL_n \\).
+1. *Global Schubert varieties* are subspaces of the *global affine Grassmannian*.
+
+2. The *global affine Grassmannian* is made out of copies of the *affine Grassmannian* and the *affine flag variety*.
+
+3. *Global Schubert varieties* are defined using *Schubert cells and varieties*[^5], which are subspaces of the *affine Grassmannian*.
 
 [^5]: Apparently, these are called *spherical* Schubert cells and varieties, but up until recently I didn't know this.
 
-The affine Grassmannian, \\( \mathcal Gr \\), is a certain topological space with a group acting on it. The orbits of this group action are the Schubert cells, denoted by \\( \mathcal Gr_\lambda \\). The parameter \\(\lambda\\) is, for $GL_n$, a non-increasing sequence of \\(n\\) integers. The Schubert varieties are the topological closures of these orbits.
+The *affine Grassmannian*, denoted \\( \mathcal Gr \\), is a certain topological space on which the group $GL_n(\C[[t]])$ acts. Here, $\C[[t]]$ is the ring of power series $\sum\limits_{n=0}^\infty c_nt^n$ with coefficients in $\C$. The orbits of this group action are called *Schubert cells*. Each Schubert cell corresponds to some combinatorial object $\lambda$. For $GL_n$, the possible $\lambda$ are non-increasing sequences of $n$ integers. We denote the cell corresponding to $\lambda$ by $\Gr_\lambda$. A *Schubert variety* is the topological closure of a Schubert cell in $\Gr$.
 
-The affine Grassmannian can be defined for any sufficiently nice algebraic group. In the case \\( GL_n \\), the affine Grassmannian can be identified with the set of objects called lattices. I won't describe what lattices are here, but we can think of them as points of $\Gr$. In other words, lattices allow us to give an explicit model for the affine Grassmannian of \\( GL_n \\). It is well-known what the conditions on a lattice are for it to be in the Schubert cells or varieties.
+In the case \\( GL_n \\), the affine Grassmannian can be identified with the set of objects called lattices. I won't describe what lattices are here, but the important thing is that they are hands-on objects that we can use to give meaning to a point in $\Gr$. In other words, lattices allow us to give an explicit model for the affine Grassmannian of \\( GL_n \\). It is well-known (to geometric representation theorists) what the conditions on a lattice are for it to be in the Schubert cell or variety corresponding to $\lambda$.
 
-The affine flag variety, \\( \mathcal Fl \\), is similar; it is a space with a group action. For \\( GL_n \\), we can identify \\( \mathcal Fl \\) with the set of lattice chains. These are lists of \\( n \\) lattices with some extra conditions.
+The affine flag variety, \\( \mathcal Fl \\), is similar; it is a certain space associated to our algebraic group that also has a natural group action on it. For \\( GL_n \\), we can identify \\( \mathcal Fl \\) with the set of lattice chains. These are lists of \\( n \\) lattices with some extra conditions.
 
 Finally, the global affine Grassmannian \\( \mathbf{Gr} \\) is built out of \\( \mathcal Gr \\) and \\( \mathcal Fl \\) in the following way: There is a continuous map $$ p:\mathbf{Gr}\to \mathbb C $$ such that
 
@@ -57,7 +67,7 @@ Now is the hilarious part: even though I've been working on this project for alm
 
 At the moment, my advisor claims to have found the correct explicit model. Instead of $y$-lattice chains, we use something that we call a "lattice family", which consists of a complex number and \\(n\\) lattices satisfying some extra conditions. However, I won't elaborate on these until we have the details set in stone.
 
-Anyway, now I can finally (loosely) define the global Schubert varieties. Under the isomorphism \\(p^{-1}(\mathbb C^\times)\cong \mathbb C^\times\times \mathcal Gr \\), we can consider \\(\mathbb C^\times\times\mathcal Gr_\lambda\\) as a subset of \\(\mathbf{Gr}\\). Its closure is what we call a global Schubert variety.
+Anyway, now I can finally (loosely) define the global Schubert varieties. Under the isomorphism \\(p^{-1}(\mathbb C^\times)\cong \mathbb C^\times\times \mathcal Gr \\), we can consider \\(\mathbb C^\times\times\mathcal Gr_\lambda\\) as a subset of \\(\mathbf{Gr}\\). Its topological closure is what we call a global Schubert variety.
 
 To reiterate, the goal of our project is to determine the conditions on a lattice family[^6] that tell you whether or not it is in a given global Schubert variety. To that end, we are almost done.
 
